@@ -18,37 +18,42 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			// createStudent(studentDAO);
-			createMultipleStundens(studentDAO);
+			createReadStudent(studentDAO);
+			// createMultipleStundens(studentDAO);
 		};
 	}
 
-	private void createMultipleStundens(StudentDAO studentDAO) {
+	// private void createMultipleStundens(StudentDAO studentDAO) {
 
-		System.out.println("Creating multiple students...");
-		Student tempStudent1 = new Student("Paul", "Doe", "sergio@gamil.com");
-		Student tempStudent2 = new Student("Jhon", "Doe", "jhon@gamil.com");
-		Student tempStudent3 = new Student("Bala", "Doe", "bala@gamil.com");
+	// 	System.out.println("Creating multiple students...");
+	// 	Student tempStudent1 = new Student("Paul", "Doe", "sergio@gamil.com");
+	// 	Student tempStudent2 = new Student("Jhon", "Doe", "jhon@gamil.com");
+	// 	Student tempStudent3 = new Student("Bala", "Doe", "bala@gamil.com");
 
 
-		// Saving students objects
-		System.out.println("Saving students...");
-		studentDAO.save(tempStudent1);
-		studentDAO.save(tempStudent2);
-		studentDAO.save(tempStudent3);
-	}
+	// 	// Saving students objects
+	// 	System.out.println("Saving students...");
+	// 	studentDAO.save(tempStudent1);
+	// 	studentDAO.save(tempStudent2);
+	// 	studentDAO.save(tempStudent3);
+	// }
 
 	// ? Method to Student at the moment of running the project
-	private void createStudent(StudentDAO studentDAO) {
+	private void createReadStudent(StudentDAO studentDAO) {
 		// Create the student object
-		System.out.println("Creating new student object...");
-		Student tempStudent = new Student("Sergio", "Ramos", "sergio@gamil.com");
+		// System.out.println("Creating new student object...");
+		// Student tempStudent = new Student("Test", "Ramos", "sergio@gmail.com");
 
-		// Save the student object
-		System.out.println("Saving the student...");
-		studentDAO.save(tempStudent);
+		// // Save the student object
+		// System.out.println("Saving the student...");
+		// studentDAO.save(tempStudent);
 
-		// Display id of the saved student
-		System.out.println("Saved student.  Generated id: " + tempStudent.getId());
+		// // Display id of the saved student
+
+		// int studentId = tempStudent.getId();
+		// System.out.println("Saved student.  Generated id: " + studentId);
+
+		Student myStudent = studentDAO.findById(1);
+		System.out.println("Found the student: " + myStudent);
 	}
 }

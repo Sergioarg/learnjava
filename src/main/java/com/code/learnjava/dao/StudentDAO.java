@@ -5,4 +5,6 @@ import com.code.learnjava.entity.Student;
 // ? Define the StudentDAO interface
 public interface StudentDAO {
     void save(Student theStudent);
+
+    Student findById(Integer id);
 }
