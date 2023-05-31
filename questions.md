@@ -1,4 +1,4 @@
-## Notes about questions pending to resolve.
+## Questions.
 
 1. Que es un @Bean
 - The object that form the backbone of yout app and that are managed by the Spring *IoC* container called are called beans.
@@ -11,6 +11,13 @@
 7. Datos primitivos y complejos
 8. Contructor Injection y Setter Injection
 
+### Notes
+Date: 31/05/2023
+- Spring and Jackson Support
+    - When building Spring REST Apps
+    - Spring will automatically handle Jackson Integration
+    - *JSON* data being passed to REST controller is converted to *POJO*
+    - Java object being returned from REST controller is converted to JSON
 ### Definitions
 - *Inversion of Control (IoC)*: Software Desing Pinciple es un principio de asegura que un programa puede ser beneficioso en terminos de pluggability, testability, usability y bajo acoplamiento.
 - CRM: Customer Ralational Manager App
