@@ -20,15 +20,9 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			queryForStudents(studentDAO);
+			// queryForStudents(studentDAO);
+			queryForStudentByLastName(studentDAO);
 		};
-	}
-
-	private void searchStudent(StudentDAO studentDAO) {
-
-		// Display id of the saved student
-		Student myStudent = studentDAO.findById(1);
-		System.out.println("Found the student: " + myStudent);
 	}
 
 	private void createMultipleStundens(StudentDAO studentDAO) {
@@ -45,15 +39,11 @@ public class LearnjavaApplication {
 		studentDAO.save(tempStudent3);
 	}
 
-	// ? Method to Student at the moment of running the project
-	private void createReadStudent(StudentDAO studentDAO) {
-		// Create the student object
-		System.out.println("Creating new student object...");
-		Student tempStudent = new Student("Test", "Ramos", "sergio@gmail.com");
+	private void searchStudent(StudentDAO studentDAO) {
 
-		// Save the student object
-		System.out.println("Saving the student...");
-		studentDAO.save(tempStudent);
+		// Display id of the saved student
+		Student myStudent = studentDAO.findById(1);
+		System.out.println("Found the student: " + myStudent);
 	}
 
 	private void queryForStudents(StudentDAO studentDAO) {
@@ -61,6 +51,15 @@ public class LearnjavaApplication {
 		List<Student> theStudents = studentDAO.findAll();
 		for (Student tempStudent : theStudents) {
 			System.out.println(tempStudent);
+		}
+	}
+
+	private void queryForStudentByLastName(StudentDAO studentDAO) {
+
+		List<Student> theStudents = studentDAO.findByLastName("Doe");
+
+		for (Student tempStudent : theStudents) {
+			System.out.println("Student: " + tempStudent);
 		}
 	}
 }
