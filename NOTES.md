@@ -1,4 +1,4 @@
-HTTP Response - Status Codes
+### HTTP Response - Status Codes
 | Code Range | Description   |
 | ---------- | ------------- |
 | 100 - 199  | Informational |
