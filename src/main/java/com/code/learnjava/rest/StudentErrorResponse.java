@@ -15,6 +15,5 @@ public class StudentErrorResponse {
         this.timeStamp = timeStamp;
     }
 
-    public StudentErrorResponse() {
-    }
+    public StudentErrorResponse() {}
 }
