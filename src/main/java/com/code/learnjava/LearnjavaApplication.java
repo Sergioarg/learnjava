@@ -20,7 +20,7 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			deleteAllStudent(studentDAO);
+			createMultipleStundens(studentDAO);
 		};
 	}
 

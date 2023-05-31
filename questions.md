@@ -3,10 +3,6 @@
 1. Que es un @Bean
 - The object that form the backbone of yout app and that are managed by the Spring *IoC* container called are called beans.
 - Un bean es un objeto que es instanciado, ensamblado y administrado por un contenedor Spring IoC.
-
-### Definitions
-- *Inversion of Control (IoC)*: Software Desing Pinciple es un principio de asegura que un programa puede ser beneficioso en terminos de pluggability, testability, usability y bajo acoplamiento.
-
 2. Como funciona el ciclo de vida de un @Bean
 3. Que es y como funciona el Singletone y el Scope
 4. Que es AOP: Aspect-Oriented Programing
@@ -14,3 +10,7 @@
 6. Estructura de datos DAO: Data Access Object
 7. Datos primitivos y complejos
 8. Contructor Injection y Setter Injection
+
+### Definitions
+- *Inversion of Control (IoC)*: Software Desing Pinciple es un principio de asegura que un programa puede ser beneficioso en terminos de pluggability, testability, usability y bajo acoplamiento.
+- CRM: Customer Ralational Manager App
