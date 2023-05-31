@@ -3,7 +3,7 @@ package com.code.learnjava.dao;
 import java.util.List;
 
 import com.code.learnjava.entity.Student;
-
+// Data Access Object -> DAO
 // ? Define the StudentDAO interface
 public interface StudentDAO {
 
@@ -15,4 +15,5 @@ public interface StudentDAO {
 
     List<Student> findByLastName(String theLastName);
 
+    void update(Student theStudent);
 }

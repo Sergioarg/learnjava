@@ -20,9 +20,25 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			// queryForStudents(studentDAO);
-			queryForStudentByLastName(studentDAO);
+			updateStudent(studentDAO);
 		};
+	}
+
+	// ? Porque se pone primero StudentDAO studentDAO y luego
+	private void updateStudent(StudentDAO studentDAO) {
+		// Display id of the saved studet
+
+		int studentId = 1;
+		Student myStudent = studentDAO.findById(studentId);
+
+		if (myStudent == null) {
+			System.out.println("We can't find the student with id: " + studentId);
+		} else {
+			System.out.println("Student to student: " + myStudent);
+			myStudent.setFirstName("Victoria");
+			studentDAO.update(myStudent);
+			System.out.println("Student updated: " + myStudent);
+		}
 	}
 
 	private void createMultipleStundens(StudentDAO studentDAO) {
