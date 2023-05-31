@@ -1,5 +1,7 @@
 package com.code.learnjava;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,9 +20,7 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			// createReadStudent(studentDAO);
-			searchStudent(studentDAO);
-			// createMultipleStundens(studentDAO);
+			queryForStudents(studentDAO);
 		};
 	}
 
@@ -54,5 +54,13 @@ public class LearnjavaApplication {
 		// Save the student object
 		System.out.println("Saving the student...");
 		studentDAO.save(tempStudent);
+	}
+
+	private void queryForStudents(StudentDAO studentDAO) {
+
+		List<Student> theStudents = studentDAO.findAll();
+		for (Student tempStudent : theStudents) {
+			System.out.println(tempStudent);
+		}
 	}
 }
