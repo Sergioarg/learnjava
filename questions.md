@@ -10,6 +10,7 @@
 6. Estructura de datos DAO: Data Access Object
 7. Datos primitivos y complejos
 8. Contructor Injection y Setter Injection
+9. Que hace exactamente la anotación @Repository
 
 ### Notes
 Date: 31/05/2023
