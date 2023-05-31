@@ -20,11 +20,33 @@ public class LearnjavaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			updateStudent(studentDAO);
+			deleteAllStudent(studentDAO);
 		};
 	}
 
+	private void deleteAllStudent(StudentDAO studentDAO) {
+		System.out.println("Deleting all students...");
+		int numRowDeleted = studentDAO.deleteAll();
+		System.out.println("Number of students deleted: " + numRowDeleted);
+	}
+
 	// ? Porque se pone primero StudentDAO studentDAO y luego
+	private void deleteStudent(StudentDAO studentDAO) {
+		// Display id of the saved studet
+
+		int studentId = 2;
+		Student myStudent = studentDAO.findById(studentId);
+
+		if (myStudent == null) {
+			System.out.println("We can't find the student with id: " + studentId);
+		} else {
+			System.out.println("Student to delete: " + myStudent);
+			studentDAO.delete(studentId);
+			System.out.println("Student Deleted: " + myStudent);
+		}
+	}
+
+
 	private void updateStudent(StudentDAO studentDAO) {
 		// Display id of the saved studet
 
