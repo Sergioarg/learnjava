@@ -19,4 +19,7 @@
 ### Java JSON Data Binding
 
 1. Data binding is the process of converting JSON data to a JAVA POJO. - This use the Jackson library behind the scenes
-   > POJO: Plain Old Java Object
+> POJO: Plain Old Java Object
+
+### Anti-Patterns in REST API
+- Don't include actions in the endpoint `/api/employeeList`.
