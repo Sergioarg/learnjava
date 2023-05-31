@@ -2,8 +2,8 @@ package com.code.learnjava;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.code.learnjava.dao.StudentDAO;
 import com.code.learnjava.entity.Student;
@@ -37,7 +37,6 @@ public class LearnjavaApplication {
 		Student tempStudent1 = new Student("Paul", "Doe", "sergio@gamil.com");
 		Student tempStudent2 = new Student("Jhon", "Doe", "jhon@gamil.com");
 		Student tempStudent3 = new Student("Bala", "Doe", "bala@gamil.com");
-
 
 		// Saving students objects
 		System.out.println("Saving students...");

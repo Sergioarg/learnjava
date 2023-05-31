@@ -1,6 +1,5 @@
 package com.code.learnjava.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.code.learnjava.entity.Student;
@@ -14,7 +13,6 @@ public class StudentDAOImpl implements StudentDAO {
     private EntityManager entityManager;
 
     // ? Inject entity manager using contructor injection
-    @Autowired
     public StudentDAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
