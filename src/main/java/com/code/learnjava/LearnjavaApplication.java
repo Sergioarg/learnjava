@@ -66,7 +66,7 @@ public class LearnjavaApplication {
 
 		List<Student> theStudents = studentDAO.findAll();
 		for (Student tempStudent : theStudents) {
-			System.out.println(tempStudent);
+			System.out.println("Student: " + tempStudent);
 		}
 	}
 
