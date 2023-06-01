@@ -15,8 +15,9 @@
 9. Que hace exactamente la anotación @Repository
 10. Que es? [Service Facade Design Pattern](https://www.ibm.com/docs/pt-br/integration-bus/9.0.0?topic=SSMKHH_9.0.0/com.ibm.etools.mft.pattern.sen.doc/sen/sf/overview.html)
     - Diferentes formas para integrar varios DAO
-
 12. @Service que es y como funciona?
+13. Cual es la diferencia entre `implements` y `extends`.
+14. Uasge of Java optionals
 
 ### Notes
 Date: 31/05/2023
