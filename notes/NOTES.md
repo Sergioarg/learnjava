@@ -24,3 +24,6 @@
 ### Anti-Patterns in REST API
 
 - Don't include actions in the endpoint `/api/employeeList`. WRONG
+
+JpaRepository:
+   - Crate the CRUD methods extending JpaRepository in the class
