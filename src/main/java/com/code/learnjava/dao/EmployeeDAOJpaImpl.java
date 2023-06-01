@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.code.learnjava.entity.Employee;
 
@@ -30,6 +31,28 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
         // Execute query
         List<Employee> employees = theQuery.getResultList();
         return employees;
+    }
+
+
+    // CRUD Process
+
+    @Override
+    public Employee finEmployee(int theId) {
+        Employee theEmployee = entityManager.find(Employee.class, theId);
+        return theEmployee;
+    }
+
+    @Override
+    // @Transactional Ahora el @Service ser encarga de los @Transactional
+    public Employee save(Employee theEmployee) {
+        Employee dbEmployee = entityManager.merge(theEmployee);
+        return dbEmployee;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        Employee theEmployee = entityManager.find(Employee.class, theId);
+        entityManager.remove(theEmployee);
     }
 
 }

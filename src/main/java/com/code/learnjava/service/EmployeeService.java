@@ -5,5 +5,15 @@ import java.util.List;
 import com.code.learnjava.entity.Employee;
 
 public interface EmployeeService {
+
     List<Employee> findAll();
+
+    // Read
+    Employee finEmployee(int theId);
+
+    // Create
+    Employee save(Employee theEmployee);
+
+    // Delete
+    void deleteById(int theId);
 }
