@@ -28,3 +28,6 @@
 ### Random definition
 - *JpaRepository*: Crate the CRUD methods extending JpaRepository in the class
 - *Boilerplate code*: simply boilerplate, are sections of code that are repeated in multiple places with little to no variation.
+*Spring Boot Starter Data Rest*
+   - Expose all the edpoints of CRUD
+   - HATEOS:  Hypermedia as the Engine of Application State
