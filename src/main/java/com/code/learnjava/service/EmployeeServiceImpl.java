@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     // Delegate the calls for the service
     @Override
-    public Employee finEmployee(int theId) {
+    public Employee findById(int theId) {
         return employeeDAO.finEmployee(theId);
     }
 
