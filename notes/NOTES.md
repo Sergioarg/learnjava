@@ -23,4 +23,4 @@
 
 ### Anti-Patterns in REST API
 
-- Don't include actions in the endpoint `/api/employeeList`.
+- Don't include actions in the endpoint `/api/employeeList`. WRONG
