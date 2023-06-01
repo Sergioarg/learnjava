@@ -2,6 +2,7 @@ package com.code.learnjava.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.code.learnjava.entity.Employee;
 import com.code.learnjava.service.EmployeeService;
+
+import jakarta.websocket.server.PathParam;
 
 
 @RestController
@@ -63,6 +66,17 @@ public class EmployeeRestController {
         return dbEmployee;
     }
 
+    // D: Delete
+    @DeleteMapping(value="/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+        Employee tempEmployee = employeeService.findById(employeeId);
 
+        if (tempEmployee == null) {
+            throw new RuntimeException("Employee id not found -" + employeeId);
+        }
 
+        employeeService.deleteById(employeeId);
+
+        return "Deleted employeed id - " + employeeId;
+    }
 }
