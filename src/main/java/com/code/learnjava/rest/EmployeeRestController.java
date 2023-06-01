@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,16 @@ public class EmployeeRestController {
         return employeeService.findAll();
     }
 
-    @GetMapping(value="/employees/{employeeId}")
+    // C: Create
+    @GetMapping(value="/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee) {
+        theEmployee.setId(0);
+        Employee dbEmployee = employeeService.save(theEmployee);
+        return dbEmployee;
+    }
+
+    // R: Read
+    @PostMapping(value="/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
         Employee theEmployee = employeeService.findById(employeeId);
 
@@ -35,4 +46,5 @@ public class EmployeeRestController {
         }
         return theEmployee;
     }
+
 }

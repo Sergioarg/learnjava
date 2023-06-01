@@ -9,18 +9,18 @@
 
 ### HTTP Methods - CRUD
 
-| HTTP Method | CRUD Action                              |
-| ----------- | ---------------------------------------- |
-| `POST`      | Create a new entiity                     |
-| `GET`       | Read a list of entities or single entity |
-| `PUT`       | Update an existing entity                |
-| `DELETE`    | Delete an existing entity                |
+| HTTP Method | CRUD Action                              | Type of Mapping  |
+| :---------: | ---------------------------------------- | ---------------- |
+|   `POST`    | Create a new entiity                     | `@PostMapping`   |
+|    `GET`    | Read a list of entities or single entity | `@GetMapping`    |
+|    `PUT`    | Update an existing entity                | `@PutMapping`    |
+|  `DELETE`   | Delete an existing entity                | `@DeleteMapping` |
 
 ### Java JSON Data Binding
 
 1. Data binding is the process of converting JSON data to a JAVA POJO. - This use the Jackson library behind the scenes
-> POJO: Plain Old Java Object
+   > POJO: Plain Old Java Object
 
 ### Anti-Patterns in REST API
-- Don't include actions in the endpoint `/api/employeeList`.
 
+- Don't include actions in the endpoint `/api/employeeList`.
