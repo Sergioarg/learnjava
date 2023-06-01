@@ -25,5 +25,6 @@
 
 - Don't include actions in the endpoint `/api/employeeList`. WRONG
 
-JpaRepository:
-   - Crate the CRUD methods extending JpaRepository in the class
+### Random definition
+- *JpaRepository*: Crate the CRUD methods extending JpaRepository in the class
+- *Boilerplate code*: simply boilerplate, are sections of code that are repeated in multiple places with little to no variation.
