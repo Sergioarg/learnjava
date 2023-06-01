@@ -14,7 +14,7 @@
 10. Que es? [Service Facade Design Pattern](https://www.ibm.com/docs/pt-br/integration-bus/9.0.0?topic=SSMKHH_9.0.0/com.ibm.etools.mft.pattern.sen.doc/sen/sf/overview.html)
     - Diferentes formas para integrar varios DAO
 
-12. @Service anotation
+12. @Service que es y como funciona?
 
 ### Notes
 Date: 31/05/2023
