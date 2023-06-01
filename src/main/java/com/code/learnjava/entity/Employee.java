@@ -25,12 +25,12 @@ public class Employee {
     private String lastName;
 
     @Column(name="email")
-    private String emial;
+    private String email;
 
     // Constructor
     public Employee(String firstName, String lastName, String emial) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emial = emial;
+        this.email = emial;
     }
 }
