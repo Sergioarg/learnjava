@@ -29,7 +29,7 @@ public class EmployeeRestController {
     }
 
     // C: Create
-    @GetMapping(value="/employees")
+    @PostMapping(value="/employees")
     public Employee addEmployee(@RequestBody Employee theEmployee) {
         theEmployee.setId(0);
         Employee dbEmployee = employeeService.save(theEmployee);
@@ -37,7 +37,7 @@ public class EmployeeRestController {
     }
 
     // R: Read
-    @PostMapping(value="/employees/{employeeId}")
+    @GetMapping(value="/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
         Employee theEmployee = employeeService.findById(employeeId);
 

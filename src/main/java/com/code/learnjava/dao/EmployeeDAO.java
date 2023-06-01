@@ -6,6 +6,7 @@ import com.code.learnjava.entity.Employee;
 
 // Que significa <Valor>
 public interface EmployeeDAO {
+
     List<Employee> findAll();
 
     // Read
