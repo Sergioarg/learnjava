@@ -42,3 +42,4 @@ Spring Configurations
 | `spring.data.rest.base-path` | Base path used to expose repository resources. |
 | `spring.data.rest.default-page-size` | Default size of pages |
 | `spring.data.rest.max-page-size` | Maximum size of pages |
+- You can use the `?sort=lastName` or `?sort=firstName`
