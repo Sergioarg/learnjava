@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.code.learnjava.entity.Employee;
 import com.code.learnjava.service.EmployeeService;
 
-import jakarta.websocket.server.PathParam;
-
 
 @RestController
 @RequestMapping("/api")

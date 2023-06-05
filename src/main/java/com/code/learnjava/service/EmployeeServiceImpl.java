@@ -6,11 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.code.learnjava.dao.EmployeeDAO;
 import com.code.learnjava.dao.EmployeeRepository;
 import com.code.learnjava.entity.Employee;
-
-import jakarta.transaction.Transactional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
