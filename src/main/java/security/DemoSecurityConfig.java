@@ -1,43 +1,27 @@
 package security;
 
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+// TODO: Check why this code doesn't work the users doesn't exist.
 
 // Add configuration of security
 @Configuration
 public class DemoSecurityConfig {
 
-        // Check why this not create this users.
+        // Add Support for JDBC...Java DB Connection
         @Bean
-        public InMemoryUserDetailsManager userDetailsManager() {
+        public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
-                UserDetails jhon = User.builder()
-                                .username("jhon")
-                                .password("{noop}123")
-                                .roles("EMPLOYEE")
-                                .build();
-
-                UserDetails mary = User.builder()
-                                .username("mary")
-                                .password("{noop}123")
-                                .roles("EMPLOYEE", "MANAGER")
-                                .build();
-
-                UserDetails susan = User.builder()
-                                .username("mary")
-                                .password("{noop}123")
-                                .roles("EMPLOYEE", "MANAGER", "ADMIN")
-                                .build();
-
-                return new InMemoryUserDetailsManager(jhon, mary, susan);
-
+                return new JdbcUserDetailsManager(dataSource);
         }
 
         // Add permissions authorization
@@ -58,4 +42,30 @@ public class DemoSecurityConfig {
 
                 return http.build();
         }
+
+        // @Bean
+        // public InMemoryUserDetailsManager userDetailsManager() {
+
+        //         UserDetails jhon = User.builder()
+        //                         .username("jhon")
+        //                         .password("{noop}123")
+        //                         .roles("EMPLOYEE")
+        //                         .build();
+
+        //         UserDetails mary = User.builder()
+        //                         .username("mary")
+        //                         .password("{noop}123")
+        //                         .roles("EMPLOYEE", "MANAGER")
+        //                         .build();
+
+        //         UserDetails susan = User.builder()
+        //                         .username("mary")
+        //                         .password("{noop}123")
+        //                         .roles("EMPLOYEE", "MANAGER", "ADMIN")
+        //                         .build();
+
+        //         return new InMemoryUserDetailsManager(jhon, mary, susan);
+
+        // }
+
 }
