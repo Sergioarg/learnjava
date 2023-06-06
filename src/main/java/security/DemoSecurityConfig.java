@@ -21,7 +21,17 @@ public class DemoSecurityConfig {
         @Bean
         public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
-                return new JdbcUserDetailsManager(dataSource);
+                JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+                // Use custom tables in SQL
+
+                jdbcUserDetailsManager
+                                .setUsersByUsernameQuery(
+                                        "select user_id, pw, active from members where user_id=?");
+                jdbcUserDetailsManager
+                                .setAuthoritiesByUsernameQuery(
+                                        "select user_id, roles from roles where user_id=?");
+
+                return jdbcUserDetailsManager;
         }
 
         // Add permissions authorization
@@ -29,11 +39,13 @@ public class DemoSecurityConfig {
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                 http.authorizeHttpRequests(
                                 configurer -> configurer
-                                .requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
-                                .requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("EMPLOYEE")
-                                .requestMatchers(HttpMethod.POST, "/api/employees").hasRole("MANAGER")
-                                .requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("MANAGER")
-                                .requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN"));
+                                                .requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
+                                                .requestMatchers(HttpMethod.GET, "/api/employees/**")
+                                                .hasRole("EMPLOYEE")
+                                                .requestMatchers(HttpMethod.POST, "/api/employees").hasRole("MANAGER")
+                                                .requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("MANAGER")
+                                                .requestMatchers(HttpMethod.DELETE, "/api/employees/**")
+                                                .hasRole("ADMIN"));
 
                 // Use HTTP basic auth
                 http.httpBasic(Customizer.withDefaults());
@@ -46,25 +58,25 @@ public class DemoSecurityConfig {
         // @Bean
         // public InMemoryUserDetailsManager userDetailsManager() {
 
-        //         UserDetails jhon = User.builder()
-        //                         .username("jhon")
-        //                         .password("{noop}123")
-        //                         .roles("EMPLOYEE")
-        //                         .build();
+        // UserDetails jhon = User.builder()
+        // .username("jhon")
+        // .password("{noop}123")
+        // .roles("EMPLOYEE")
+        // .build();
 
-        //         UserDetails mary = User.builder()
-        //                         .username("mary")
-        //                         .password("{noop}123")
-        //                         .roles("EMPLOYEE", "MANAGER")
-        //                         .build();
+        // UserDetails mary = User.builder()
+        // .username("mary")
+        // .password("{noop}123")
+        // .roles("EMPLOYEE", "MANAGER")
+        // .build();
 
-        //         UserDetails susan = User.builder()
-        //                         .username("mary")
-        //                         .password("{noop}123")
-        //                         .roles("EMPLOYEE", "MANAGER", "ADMIN")
-        //                         .build();
+        // UserDetails susan = User.builder()
+        // .username("mary")
+        // .password("{noop}123")
+        // .roles("EMPLOYEE", "MANAGER", "ADMIN")
+        // .build();
 
-        //         return new InMemoryUserDetailsManager(jhon, mary, susan);
+        // return new InMemoryUserDetailsManager(jhon, mary, susan);
 
         // }
 
