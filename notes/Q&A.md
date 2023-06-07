@@ -53,6 +53,18 @@ Date: 31/05/2023
     - *JSON* data being passed to REST controller is converted to *POJO*
     - Java object being returned from REST controller is converted to JSON
 ---
-### Definitions
+### Definitions¿
 - *Inversion of Control (IoC)*: Software Desing Pinciple es un principio de asegura que un programa puede ser beneficioso en terminos de pluggability, testability, usability y bajo acoplamiento.
 - CRM: Customer Ralational Manager App
+
+## Conceptos
+
+Layered Architecture.
+
+Model View Controller (MVC):
+    - Model: Define data structure
+    - 
+
+1. Service: Manage data and bussines data, bussines logic: logica de cada negocio
+2. Respository: Tiene las consultas de las bases de datos
+Clase en Modelo: clases User y atributos de la clase user.
